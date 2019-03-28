@@ -6,4 +6,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-label>Upload files</ion-label>
+<ion-content>
+  <ion-input type="file" multiple="file" (change)="upload($event)"></ion-input>
+  <ion-range color="primary" min="0" max="100" [value]="percent | async" pin="false"></ion-range>
+</ion-content>

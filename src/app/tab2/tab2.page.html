@@ -6,4 +6,19 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-card *ngFor="let task of messages | async | myOrderBy">
+    <ion-card-header>
+      <strong>{{task.sender}}</strong>
+    </ion-card-header>
+    <ion-card-content>
+      {{task.message}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>  <ion-input type="text" #input (keydown.enter)="addTask(input.value)"> </ion-input>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
